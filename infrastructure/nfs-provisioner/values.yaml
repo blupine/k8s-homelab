@@ -1,0 +1,6 @@
+nfs:
+  server: 192.168.0.253
+  path: /mnt/k8s_data
+storageClass:
+  name: nfs-client
+  defaultClass: true
