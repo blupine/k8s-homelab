@@ -3,10 +3,13 @@ kind: Service
 metadata:
   name: webflux-cache-service
   namespace: apps
+  labels:
+    app: webflux-cache-service
 spec:
   selector:
     app: webflux-cache
   ports:
-  - protocol: TCP
+  - name: http
+    protocol: TCP
     port: 80
     targetPort: 8080
