@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webflux-cache
+  namespace: apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webflux-cache
+  template:
+    metadata:
+      labels:
+        app: webflux-cache
+    spec:
+      containers:
+      - name: webflux-cache
+        image: ghcr.io/blupine/webflux-cache:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: ghcr-creds
