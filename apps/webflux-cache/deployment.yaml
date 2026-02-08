@@ -14,9 +14,9 @@ spec:
         app: webflux-cache
     spec:
       containers:
-      - name: webflux-cache
-        image: ghcr.io/blupine/webflux-cache:latest
-        ports:
-        - containerPort: 8080
+        - name: webflux-cache
+          image: ghcr.io/blupine/webflux-cache:0.3
+          ports:
+            - containerPort: 8080
       imagePullSecrets:
-      - name: ghcr-creds
+        - name: ghcr-creds
