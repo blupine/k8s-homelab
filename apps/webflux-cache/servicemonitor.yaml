@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.io/v1
+kind: ServiceMonitor
+metadata:
+  name: webflux-cache-monitor
+  namespace: apps
+  labels:
+    release: monitoring-stack 
+spec:
+  selector:
+    matchLabels:
+      app: webflux-cache-service
+  endpoints:
+  - port: http
+    path: /app-cache-1/actuator/prometheus
+    interval: 15s
