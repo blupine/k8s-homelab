@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webflux-ehcache
+  namespace: apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webflux-ehcache
+  template:
+    metadata:
+      labels:
+        app: webflux-ehcache
+    spec:
+      containers:
+        - name: webflux-ehcache
+          image: ghcr.io/blupine/webflux-ehcache:0.0
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: ghcr-creds
