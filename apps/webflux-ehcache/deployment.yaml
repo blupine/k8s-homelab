@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: webflux-ehcache
-          image: ghcr.io/blupine/webflux-ehcache:0.3
+          image: ghcr.io/blupine/webflux-ehcache:0.4
           ports:
             - containerPort: 8080
       imagePullSecrets:
